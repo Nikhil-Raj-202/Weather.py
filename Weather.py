@@ -1,14 +1,12 @@
-from flask import Flask, render_template, request, jsonify
-import requests
+import streamlit as st
 
-app = Flask(__name__)
+st.title("Weather App")
+st.write("Welcome to the weather app!")
+
+import requests
 
 # Replace with your actual API key
 OPENWEATHER_API_KEY = '013958d1bff87faf90802a49ec85ff56'
-
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 @app.route('/weather', methods=['POST'])
 def get_weather():
